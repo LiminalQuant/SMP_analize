@@ -294,7 +294,7 @@ if uploaded_file:
     # -----------------------------
     output = io.BytesIO()
 
-    with pd.ExcelWriter(output, engine="xlsxwriter") as writer:
+    with pd.ExcelWriter(output, engine="openpyxl") as writer:
         svc.to_excel(writer, sheet_name="services", index=False)
         dept.to_excel(writer, sheet_name="departments", index=False)
         dept_summary.to_excel(writer, sheet_name="departments_summary", index=False)
